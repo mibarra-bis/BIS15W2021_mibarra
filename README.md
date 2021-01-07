@@ -15,7 +15,11 @@ Email address: [Margarita Ibarra UCD Email](mailto:mibarra@ucdavis.edu)
 * [BIS15L: Data Science for Biologists Webpage](https://jmledford3115.github.io/datascibiol/)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 * [BIS15W2021_mibarra](https://github.com/mibarra-bis/BIS15W2021_mibarra)
+=======
+* [BIS15W2021_mibarra](https://github.com/mibarra-bis/BIS15W2021_mibarra)
+>>>>>>> 0712ee95214f7a9bee33a83bf6f57b0f7dd5f8d1
 =======
 * [BIS15W2021_mibarra](https://github.com/mibarra-bis/BIS15W2021_mibarra)
 >>>>>>> 0712ee95214f7a9bee33a83bf6f57b0f7dd5f8d1
