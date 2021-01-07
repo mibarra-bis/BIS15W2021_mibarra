@@ -1,5 +1,6 @@
 ### BIS15W2021_mibarra
 
+
 ## *Intro/About Me:*
 My name is Margarita. I graduated from UC Davis with a major in neurobiology, physiology and behavior and have returned to continue my studies. I am excited to begin learning more about R! My work for BIS15L can be found here.
 
