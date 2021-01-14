@@ -21,7 +21,7 @@ library(tidyverse)
 ## Mammals Sleep
 1. For this assignment, we are going to use built-in data on mammal sleep patterns. From which publication are these data taken from? Since the data are built-in you can use the help function in R.
 
-  The data is from the Proceedings of the National Academy of Sciences
+  _The data is from the Proceedings of the National Academy of Sciences_
 
 ```r
 ?msleep
@@ -29,13 +29,14 @@ library(tidyverse)
 
 2. Store these data into a new data frame `sleep`.
 
+
 ```r
 sleep <- data.frame(msleep)
 ```
 
 3. What are the dimensions of this data frame (variables and observations)? How do you know? Please show the *code* that you used to determine this below.  
   
-  There are 83 rows or observations and 11 columns (or variables) in this data frame. This was determined using 'str(sleep).'
+  _There are 83 rows or observations and 11 columns (or variables) in this data frame. This was determined using 'str(sleep).'_
   
 
 ```r
@@ -59,7 +60,7 @@ str(sleep)
 
 4. Are there any NAs in the data? How did you determine this? Please show your code.  
 
-  Yes, there are missing values in the data. This was determined using 'anyNA(sleep)'
+  _Yes, there are missing values in the data. This was determined using 'anyNA(sleep)'_
 
 ```r
 anyNA(sleep)
@@ -83,83 +84,11 @@ colnames(sleep)
 ```
 
 6. How many herbivores are represented in the data?
-  There are 32 herbivores represented in the data.
+
+  _There are 32 herbivores represented in the data._
 
 ```r
 herbivores <- subset(sleep, vore == "herbi")
-herbivores
-```
-
-```
-##                              name        genus  vore          order
-## 3                 Mountain beaver   Aplodontia herbi       Rodentia
-## 5                             Cow          Bos herbi   Artiodactyla
-## 6                Three-toed sloth     Bradypus herbi         Pilosa
-## 10                       Roe deer    Capreolus herbi   Artiodactyla
-## 11                           Goat        Capri herbi   Artiodactyla
-## 12                     Guinea pig        Cavis herbi       Rodentia
-## 14                     Chinchilla   Chinchilla herbi       Rodentia
-## 19                     Tree hyrax  Dendrohyrax herbi     Hyracoidea
-## 21                 Asian elephant      Elephas herbi    Proboscidea
-## 23                          Horse        Equus herbi Perissodactyla
-## 24                         Donkey        Equus herbi Perissodactyla
-## 27      Western american chipmunk     Eutamias herbi       Rodentia
-## 30                        Giraffe      Giraffa herbi   Artiodactyla
-## 33                     Gray hyrax  Heterohyrax herbi     Hyracoidea
-## 35                 Mongoose lemur        Lemur herbi       Primates
-## 36               African elephant    Loxodonta herbi    Proboscidea
-## 39               Mongolian gerbil     Meriones herbi       Rodentia
-## 40                 Golden hamster Mesocricetus herbi       Rodentia
-## 41                          Vole      Microtus herbi       Rodentia
-## 42                    House mouse          Mus herbi       Rodentia
-## 44           Round-tailed muskrat     Neofiber herbi       Rodentia
-## 46                           Degu      Octodon herbi       Rodentia
-## 48                         Rabbit  Oryctolagus herbi     Lagomorpha
-## 49                          Sheep         Ovis herbi   Artiodactyla
-## 61                        Potoroo     Potorous herbi  Diprotodontia
-## 64                 Laboratory rat       Rattus herbi       Rodentia
-## 68                     Cotton rat     Sigmodon herbi       Rodentia
-## 70         Arctic ground squirrel Spermophilus herbi       Rodentia
-## 71 Thirteen-lined ground squirrel Spermophilus herbi       Rodentia
-## 72 Golden-mantled ground squirrel Spermophilus herbi       Rodentia
-## 76      Eastern american chipmunk       Tamias herbi       Rodentia
-## 77                Brazilian tapir      Tapirus herbi Perissodactyla
-##    conservation sleep_total sleep_rem sleep_cycle awake brainwt   bodywt
-## 3            nt        14.4       2.4          NA   9.6      NA    1.350
-## 5  domesticated         4.0       0.7   0.6666667  20.0 0.42300  600.000
-## 6          <NA>        14.4       2.2   0.7666667   9.6      NA    3.850
-## 10           lc         3.0        NA          NA  21.0 0.09820   14.800
-## 11           lc         5.3       0.6          NA  18.7 0.11500   33.500
-## 12 domesticated         9.4       0.8   0.2166667  14.6 0.00550    0.728
-## 14 domesticated        12.5       1.5   0.1166667  11.5 0.00640    0.420
-## 19           lc         5.3       0.5          NA  18.7 0.01230    2.950
-## 21           en         3.9        NA          NA  20.1 4.60300 2547.000
-## 23 domesticated         2.9       0.6   1.0000000  21.1 0.65500  521.000
-## 24 domesticated         3.1       0.4          NA  20.9 0.41900  187.000
-## 27         <NA>        14.9        NA          NA   9.1      NA    0.071
-## 30           cd         1.9       0.4          NA  22.1      NA  899.995
-## 33           lc         6.3       0.6          NA  17.7 0.01227    2.625
-## 35           vu         9.5       0.9          NA  14.5      NA    1.670
-## 36           vu         3.3        NA          NA  20.7 5.71200 6654.000
-## 39           lc        14.2       1.9          NA   9.8      NA    0.053
-## 40           en        14.3       3.1   0.2000000   9.7 0.00100    0.120
-## 41         <NA>        12.8        NA          NA  11.2      NA    0.035
-## 42           nt        12.5       1.4   0.1833333  11.5 0.00040    0.022
-## 44           nt        14.6        NA          NA   9.4      NA    0.266
-## 46           lc         7.7       0.9          NA  16.3      NA    0.210
-## 48 domesticated         8.4       0.9   0.4166667  15.6 0.01210    2.500
-## 49 domesticated         3.8       0.6          NA  20.2 0.17500   55.500
-## 61         <NA>        11.1       1.5          NA  12.9      NA    1.100
-## 64           lc        13.0       2.4   0.1833333  11.0 0.00190    0.320
-## 68         <NA>        11.3       1.1   0.1500000  12.7 0.00118    0.148
-## 70           lc        16.6        NA          NA   7.4 0.00570    0.920
-## 71           lc        13.8       3.4   0.2166667  10.2 0.00400    0.101
-## 72           lc        15.9       3.0          NA   8.1      NA    0.205
-## 76         <NA>        15.8        NA          NA   8.2      NA    0.112
-## 77           vu         4.4       1.0   0.9000000  19.6 0.16900  207.501
-```
-
-```r
 nrow(herbivores)
 ```
 
@@ -171,6 +100,7 @@ nrow(herbivores)
 
 
 ```r
+# Small mammals
 small <- subset(sleep, bodywt <=1.00)
 small_df <- data.frame(small)
 small_df
@@ -255,6 +185,7 @@ small_df
 
 
 ```r
+# Large animals
 large <- subset(sleep, bodywt >= 200)
 large_df <- data.frame(large)
 large_df
@@ -295,6 +226,7 @@ colMeans(smallwt_avg)
 ```
 
 
+
 ```r
 # The average weight of large animals is approximately 1747.071
 largewt_avg <- data.frame(large_df$bodywt)
@@ -309,7 +241,8 @@ colMeans(largewt_avg)
 
 
 9. Using a similar approach as above, do large or small animals sleep longer on average?
-  Large animals are awake longer, therefore we can say that small animals sleep more.
+  
+  _Large animals are awake longer, therefore we can say that small animals sleep more._
 
 
 ```r
@@ -320,50 +253,6 @@ colMeans(smallsleep)
 ```
 ## small_df.awake 
 ##       11.34167
-```
-
-```r
-smallsleep
-```
-
-```
-##    small_df.awake
-## 1             7.0
-## 2             9.1
-## 3            17.0
-## 4            14.6
-## 5            11.5
-## 6            13.7
-## 7            15.7
-## 8            14.9
-## 9             4.3
-## 10           13.9
-## 11            9.1
-## 12           14.2
-## 13            4.6
-## 14            9.8
-## 15            9.7
-## 16           11.2
-## 17           11.5
-## 18            4.1
-## 19            9.4
-## 20           16.3
-## 21            9.5
-## 22           13.7
-## 23           12.5
-## 24           11.0
-## 25           15.3
-## 26           14.4
-## 27           15.6
-## 28           12.7
-## 29           13.4
-## 30            7.4
-## 31           10.2
-## 32            8.1
-## 33           11.2
-## 34            8.2
-## 35            8.4
-## 36           15.1
 ```
 
 
@@ -377,27 +266,10 @@ colMeans(largesleep)
 ##       20.70714
 ```
 
-```r
-largesleep
-```
-
-```
-##   large_df.awake
-## 1          20.00
-## 2          20.10
-## 3          21.10
-## 4          22.10
-## 5          21.35
-## 6          20.70
-## 7          19.60
-```
-
-```r
-view(large_df)
-```
-
 10. Which animal is the sleepiest among the entire dataframe?
-  The sleepiest animal is the little brown bat with a sleep total of 19.9 hours.
+
+  _The sleepiest animal is the little brown bat with a sleep total of 19.9 hours._
+  
 
 ```r
 summary(sleep)
