@@ -1,0 +1,119 @@
+---
+title: "Lab 3 Homework"
+author: "Margarita Ibarra"
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    theme: spacelab
+    keep_md: yes
+---
+## Instructions
+Answer the following questions and complete the exercises in RMarkdown. Please embed all of your code and push your final work to your repository. Your final lab report should be organized, clean, and run free from errors. Remember, you must remove the `#` for the included code chunks to run. Be sure to add your name to the author header above.
+
+Make sure to use the formatting conventions of RMarkdown to make your report neat and clean!  
+
+## Load the tidyverse
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+```
+
+## Mammals Sleep
+1. For this assignment, we are going to use built-in data on mammal sleep patterns. From which publication are these data taken from? Since the data are built-in you can use the help function in R.
+
+  The data is from the Proceedings of the National Academy of Sciences
+```{r}
+?msleep
+```
+
+2. Store these data into a new data frame `sleep`.
+```{r}
+sleep <- data.frame(msleep)
+```
+
+3. What are the dimensions of this data frame (variables and observations)? How do you know? Please show the *code* that you used to determine this below.  
+  
+  There are 83 rows or observations and 11 columns (or variables) in this data frame. This was determined using 'str(sleep).'
+  
+```{r}
+str(sleep) 
+```
+
+4. Are there any NAs in the data? How did you determine this? Please show your code.  
+
+  Yes, there are missing values in the data. This was determined using 'anyNA(sleep)'
+```{r}
+anyNA(sleep)
+```
+
+5. Show a list of the column names is this data frame.
+
+```{r}
+colnames(sleep)
+```
+
+6. How many herbivores are represented in the data?
+  There are 32 herbivores represented in the data.
+```{r}
+herbivores <- subset(sleep, vore == "herbi")
+herbivores
+nrow(herbivores)
+```
+
+7. We are interested in two groups; small and large mammals. Let's define small as less than or equal to 1kg body weight and large as greater than or equal to 200kg body weight. Make two new dataframes (large and small) based on these parameters.
+
+```{r}
+small <- subset(sleep, bodywt <=1.00)
+small_df <- data.frame(small)
+small_df
+```
+
+```{r}
+large <- subset(sleep, bodywt >= 200)
+large_df <- data.frame(large)
+large_df
+```
+
+
+8. What is the mean weight for both the small and large mammals?
+
+```{r}
+# The average weight of small mammals: 0.2596667kg.
+smallwt_avg <- data.frame(small_df$bodywt)
+colMeans(smallwt_avg)
+```
+
+```{r}
+# The average weight of large animals is approximately 1747.071
+largewt_avg <- data.frame(large_df$bodywt)
+colMeans(largewt_avg)
+```
+
+
+
+9. Using a similar approach as above, do large or small animals sleep longer on average?
+  Large animals are awake longer, therefore we can say that small animals sleep more.
+
+```{r}
+smallsleep <- data.frame(small_df$awake)
+colMeans(smallsleep)
+smallsleep
+```
+
+```{r}
+largesleep <- data.frame(large_df$awake)
+colMeans(largesleep)
+largesleep
+view(large_df)
+```
+
+10. Which animal is the sleepiest among the entire dataframe?
+  The sleepiest animal is the little brown bat with a sleep total of 19.9 hours.
+```{r}
+summary(sleep)
+sleepiest <- subset(sleep, sleep_total == 19.90)
+sleepiest
+```
+
+
+## Push your final code to GitHub!
+Please be sure that you check the `keep md` file in the knit preferences.   
