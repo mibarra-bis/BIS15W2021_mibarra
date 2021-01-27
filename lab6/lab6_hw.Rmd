@@ -116,10 +116,6 @@ fisheries_tidy %>%
   summarize(sardines=sum(catch, na.rm=T)) %>% 
   arrange(desc(sardines))
 ```
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<div class = "blue">
 
 8. Which five countries caught the most cephalopods between 2008-2012?
 
@@ -132,7 +128,7 @@ fisheries_tidy %>%
   summarize(cephalopods=sum(catch, na.rm=T)) %>% 
   arrange(desc(cephalopods))
 ```
-</div>
+
 
 9. Which species had the highest catch total between 2008-2012? (hint: Osteichthyes is not a species)
 Theragra chalcogramma had the highest catch total.

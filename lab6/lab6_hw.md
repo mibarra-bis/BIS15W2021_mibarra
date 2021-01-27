@@ -1,7 +1,7 @@
 ---
 title: "Lab 6 Homework"
 author: "Margarita I"
-date: "2021-01-26"
+date: "2021-01-27"
 output:
   html_document: 
     theme: spacelab
@@ -348,10 +348,6 @@ fisheries_tidy %>%
 ## 10 Denmark                    477
 ## # ... with 27 more rows
 ```
-<style>
-div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
-</style>
-<div class = "blue">
 
 8. Which five countries caught the most cephalopods between 2008-2012?
 
@@ -387,7 +383,7 @@ fisheries_tidy %>%
 ## 15 Somalia                            0
 ## 16 Viet Nam                           0
 ```
-</div>
+
 
 9. Which species had the highest catch total between 2008-2012? (hint: Osteichthyes is not a species)
 Theragra chalcogramma had the highest catch total.
