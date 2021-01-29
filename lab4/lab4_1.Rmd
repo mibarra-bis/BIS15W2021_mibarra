@@ -1,6 +1,6 @@
 ---
 title: "Transforming data 1: Dplyr `select()`"
-author: "Margarita I."
+author: "Margarita I"
 date: "`r Sys.Date()`"
 output:
   html_document: 

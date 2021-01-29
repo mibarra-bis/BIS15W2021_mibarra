@@ -114,7 +114,7 @@ my_integer <- as.integer(my_numeric)
 is.integer(my_integer) #is my_numeric an integer?
 ```
 
-## Missing Data
+## Missing Data 
 R has a special way to designate missing data, the NA. NA values in R have specific properties which are very useful if your data contains any missing values. Later this quarter we will have a session focused on dealing with NAs.  
 
 NA values are used to designate missing data. `is.na` or `anyNA` are useful functions when dealing with NAs in data. 
