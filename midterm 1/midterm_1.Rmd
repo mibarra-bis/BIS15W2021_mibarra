@@ -135,7 +135,7 @@ ivindodata %>%
   filter(Distance < 5) %>% 
   summarize(across(contains("RA_"),mean))
 ```
-
+ 
 ```{r}
 #Average relative abundance at sites greater than 20 km from a village
 ivindodata %>% 

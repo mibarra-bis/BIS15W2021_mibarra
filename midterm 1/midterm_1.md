@@ -278,7 +278,7 @@ ivindodata %>%
 ##     <dbl>    <dbl>       <dbl>      <dbl>     <dbl>       <dbl>
 ## 1    0.08     70.4      0.0967       24.1      3.66        1.59
 ```
-
+ 
 
 ```r
 #Average relative abundance at sites greater than 20 km from a village
