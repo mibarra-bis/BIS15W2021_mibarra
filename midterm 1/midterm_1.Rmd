@@ -26,9 +26,16 @@ library(tidyverse)
 ```
 
 ## Questions
+
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
 **1. (2 points) Briefly explain how R, RStudio, and GitHub work together to make work flows in data science transparent and repeatable. What is the advantage of using RMarkdown in this context?**  
 
 R is a scripting language that is required to use RStudio, but RStudio is not required to use R. RStudio is a GUI or a graphical user interface which allows users to display and alter objects or visuals created through R code. GitHub is a site used by programmers which allows for and facilitates file storage, management and sharing by uploading their code to repositories on the site. Using RMarkdown is advantageous as it permits the embedding of annotated code chunks and displays analysis results and graphical outputs in a single file which can then be exported to numerous formats. All of these features combined allows users to track and replicate the work of others in a neat, efficient manner. 
+</div>
 
 
 **2. (2 points) What are the three types of `data structures` that we have discussed? Why are we using data frames for BIS 15L?**
