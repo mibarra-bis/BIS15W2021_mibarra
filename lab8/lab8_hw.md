@@ -1,7 +1,7 @@
 ---
 title: "Lab 8 Homework"
 author: "Margarita I"
-date: "2021-02-04"
+date: "2021-02-09"
 output:
   html_document: 
     theme: spacelab
@@ -40,7 +40,7 @@ sydneybeaches <- readr::read_csv("data/sydneybeaches.csv") %>%
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   BeachId = col_double(),
 ##   Region = col_character(),
@@ -57,9 +57,17 @@ If you want to try `here`, first notice the output when you load the `here` libr
 
 The quotes show the folder structure from the root directory.
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
 2. Are these data "tidy" per the definitions of the tidyverse? How do you know? Are they in wide or long format?
 
 Some of our columns are variables, so the data is not tidy. They are in long format. 
+
+
+</div>
 
 3. We are only interested in the variables site, date, and enterococci_cfu_100ml. Make a new object focused on these variables only. Name the object `sydneybeaches_long`
 
@@ -67,6 +75,24 @@ Some of our columns are variables, so the data is not tidy. They are in long for
 ```r
 sydneybeaches_long <- sydneybeaches %>% 
   select(site, date, enterococci_cfu_100ml)
+sydneybeaches_long
+```
+
+```
+## # A tibble: 3,690 x 3
+##    site           date       enterococci_cfu_100ml
+##    <chr>          <chr>                      <dbl>
+##  1 Clovelly Beach 02/01/2013                    19
+##  2 Clovelly Beach 06/01/2013                     3
+##  3 Clovelly Beach 12/01/2013                     2
+##  4 Clovelly Beach 18/01/2013                    13
+##  5 Clovelly Beach 30/01/2013                     8
+##  6 Clovelly Beach 05/02/2013                     7
+##  7 Clovelly Beach 11/02/2013                    11
+##  8 Clovelly Beach 23/02/2013                    97
+##  9 Clovelly Beach 07/03/2013                     3
+## 10 Clovelly Beach 25/03/2013                     0
+## # ... with 3,680 more rows
 ```
 
 
@@ -84,18 +110,18 @@ sydneybeaches_wide
 ## # A tibble: 11 x 345
 ##    site  `02/01/2013` `06/01/2013` `12/01/2013` `18/01/2013` `30/01/2013`
 ##    <chr>        <dbl>        <dbl>        <dbl>        <dbl>        <dbl>
-##  1 Clov…           19            3            2           13            8
-##  2 Coog…           15            4           17           18           22
-##  3 Gord…           NA           NA           NA           NA           NA
-##  4 Litt…            9            3           72            1           44
-##  5 Mala…            2            4          390           15           13
-##  6 Maro…            1            1           20            2           11
-##  7 Sout…            1            0           33            2           13
-##  8 Sout…           12            2          110           13          100
-##  9 Bond…            3            1            2            1            6
-## 10 Bron…            4            2           38            3           25
-## 11 Tama…            1            0            7           22           23
-## # … with 339 more variables: `05/02/2013` <dbl>, `11/02/2013` <dbl>,
+##  1 Clov~           19            3            2           13            8
+##  2 Coog~           15            4           17           18           22
+##  3 Gord~           NA           NA           NA           NA           NA
+##  4 Litt~            9            3           72            1           44
+##  5 Mala~            2            4          390           15           13
+##  6 Maro~            1            1           20            2           11
+##  7 Sout~            1            0           33            2           13
+##  8 Sout~           12            2          110           13          100
+##  9 Bond~            3            1            2            1            6
+## 10 Bron~            4            2           38            3           25
+## 11 Tama~            1            0            7           22           23
+## # ... with 339 more variables: `05/02/2013` <dbl>, `11/02/2013` <dbl>,
 ## #   `23/02/2013` <dbl>, `07/03/2013` <dbl>, `25/03/2013` <dbl>,
 ## #   `02/04/2013` <dbl>, `12/04/2013` <dbl>, `18/04/2013` <dbl>,
 ## #   `24/04/2013` <dbl>, `01/05/2013` <dbl>, `20/05/2013` <dbl>,
@@ -128,7 +154,7 @@ sydneybeaches_wide
 ## #   `29/03/2014` <dbl>, `22/04/2014` <dbl>, `14/04/2014` <dbl>,
 ## #   `30/04/2014` <dbl>, `12/05/2014` <dbl>, `28/05/2014` <dbl>,
 ## #   `03/06/2014` <dbl>, `19/06/2014` <dbl>, `03/07/2014` <dbl>,
-## #   `18/07/2014` <dbl>, `01/08/2014` <dbl>, …
+## #   `18/07/2014` <dbl>, `01/08/2014` <dbl>, ...
 ```
 
 
@@ -156,7 +182,7 @@ sydneybeaches_wide %>%
 ##  8 Clovelly Beach 23/02/2013                    97
 ##  9 Clovelly Beach 07/03/2013                     3
 ## 10 Clovelly Beach 25/03/2013                     0
-## # … with 3,774 more rows
+## # ... with 3,774 more rows
 ```
 
 6. We haven't dealt much with dates yet, but separate the date into columns day, month, and year. Do this on the `sydneybeaches_long` data.
@@ -165,6 +191,24 @@ sydneybeaches_wide %>%
 ```r
 sydneybeaches_long2 <- sydneybeaches_long %>% 
   separate(date, into = c("day", "month", "year"), sep = "/")
+sydneybeaches_long2
+```
+
+```
+## # A tibble: 3,690 x 5
+##    site           day   month year  enterococci_cfu_100ml
+##    <chr>          <chr> <chr> <chr>                 <dbl>
+##  1 Clovelly Beach 02    01    2013                     19
+##  2 Clovelly Beach 06    01    2013                      3
+##  3 Clovelly Beach 12    01    2013                      2
+##  4 Clovelly Beach 18    01    2013                     13
+##  5 Clovelly Beach 30    01    2013                      8
+##  6 Clovelly Beach 05    02    2013                      7
+##  7 Clovelly Beach 11    02    2013                     11
+##  8 Clovelly Beach 23    02    2013                     97
+##  9 Clovelly Beach 07    03    2013                      3
+## 10 Clovelly Beach 25    03    2013                      0
+## # ... with 3,680 more rows
 ```
 
 
@@ -193,7 +237,7 @@ sydneybeaches_avg
 ##  8 2013  Maroubra Beach                     47.1 
 ##  9 2013  South Maroubra Beach               39.3 
 ## 10 2013  South Maroubra Rockpool            96.4 
-## # … with 56 more rows
+## # ... with 56 more rows
 ```
 
 
@@ -204,6 +248,25 @@ sydneybeaches_avg
 sydneybeaches_avg_wide <- sydneybeaches_avg %>% 
   pivot_wider(names_from = "year",
               values_from = enterococci_mean)
+sydneybeaches_avg_wide
+```
+
+```
+## # A tibble: 11 x 7
+## # Groups:   site [11]
+##    site                    `2013` `2014` `2015` `2016` `2017` `2018`
+##    <chr>                    <dbl>  <dbl>  <dbl>  <dbl>  <dbl>  <dbl>
+##  1 Bondi Beach              32.2   11.1   14.3    19.4  13.2   22.9 
+##  2 Bronte Beach             26.8   17.5   23.6    61.3  16.8   43.4 
+##  3 Clovelly Beach            9.28  13.8    8.82   11.3   7.93  10.6 
+##  4 Coogee Beach             39.7   52.6   40.3    59.5  20.7   21.6 
+##  5 Gordons Bay (East)       24.8   16.7   36.2    39.0  13.7   17.6 
+##  6 Little Bay Beach        122.    19.5   25.5    31.2  18.2   59.1 
+##  7 Malabar Beach           101.    54.5   66.9    91.0  49.8   38.0 
+##  8 Maroubra Beach           47.1    9.23  14.5    26.6  11.6    9.21
+##  9 South Maroubra Beach     39.3   14.9    8.25   10.7   8.26  12.5 
+## 10 South Maroubra Rockpool  96.4   40.6   47.3    59.3  46.9  112.  
+## 11 Tamarama Beach           29.7   39.6   57.0    50.3  20.4   15.5
 ```
 
 
