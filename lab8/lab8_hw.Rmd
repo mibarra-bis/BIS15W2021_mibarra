@@ -42,15 +42,24 @@ If you want to try `here`, first notice the output when you load the `here` libr
 
 The quotes show the folder structure from the root directory.
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
+
 2. Are these data "tidy" per the definitions of the tidyverse? How do you know? Are they in wide or long format?
 
 Some of our columns are variables, so the data is not tidy. They are in long format. 
+
+
+</div>
 
 3. We are only interested in the variables site, date, and enterococci_cfu_100ml. Make a new object focused on these variables only. Name the object `sydneybeaches_long`
 
 ```{r}
 sydneybeaches_long <- sydneybeaches %>% 
   select(site, date, enterococci_cfu_100ml)
+sydneybeaches_long
 ```
 
 
@@ -78,6 +87,7 @@ sydneybeaches_wide %>%
 ```{r}
 sydneybeaches_long2 <- sydneybeaches_long %>% 
   separate(date, into = c("day", "month", "year"), sep = "/")
+sydneybeaches_long2
 ```
 
 
@@ -97,6 +107,7 @@ sydneybeaches_avg
 sydneybeaches_avg_wide <- sydneybeaches_avg %>% 
   pivot_wider(names_from = "year",
               values_from = enterococci_mean)
+sydneybeaches_avg_wide
 ```
 
 
