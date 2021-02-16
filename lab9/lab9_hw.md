@@ -1,7 +1,7 @@
 ---
 title: "Lab 9 Homework"
 author: "Margarita I"
-date: "2021-02-09"
+date: "2021-02-12"
 output:
   html_document: 
     theme: spacelab
@@ -32,7 +32,7 @@ colleges <- readr::read_csv("data/ca_college_data.csv")
 
 ```
 ## 
-## ── Column specification ────────────────────────────────────────────────────────
+## -- Column specification --------------------------------------------------------
 ## cols(
 ##   INSTNM = col_character(),
 ##   CITY = col_character(),
@@ -112,7 +112,7 @@ colleges %>%
 ##   instnm  city stabbr   zip adm_rate sat_avg pcip26 costt4_a c150_4_pooled
 ##    <int> <int>  <int> <int>    <int>   <int>  <int>    <int>         <int>
 ## 1      0     0      0     0      240     276     35      124           221
-## # … with 1 more variable: pftftug1_ef <int>
+## # ... with 1 more variable: pftftug1_ef <int>
 ```
 
 2. Which cities in California have the highest number of colleges?
@@ -138,7 +138,7 @@ colleges %>%
 ##  8 Pasadena          6
 ##  9 Fresno            5
 ## 10 Irvine            5
-## # … with 151 more rows
+## # ... with 151 more rows
 ```
 
 3. Based on your answer to #2, make a plot that shows the number of colleges in the top 10 cities.
@@ -180,7 +180,7 @@ colleges %>%
 ##  8 Thousand Oaks              54373
 ##  9 Rancho Palos Verdes        50758
 ## 10 La Verne                   50603
-## # … with 151 more rows
+## # ... with 151 more rows
 ```
 
 5. Based on your answer to #4, make a plot that compares the cost of the individual colleges in the most expensive city. Bonus! Add UC Davis here to see how it compares :>).
@@ -244,17 +244,17 @@ ucs
 ## # A tibble: 10 x 10
 ##    instnm city  stabbr zip   adm_rate sat_avg pcip26 costt4_a c150_4_pooled
 ##    <chr>  <chr> <chr>  <chr>    <dbl>   <dbl>  <dbl>    <dbl>         <dbl>
-##  1 Unive… La J… CA     92093    0.357    1324  0.216    31043         0.872
-##  2 Unive… Irvi… CA     92697    0.406    1206  0.107    31198         0.876
-##  3 Unive… Rive… CA     92521    0.663    1078  0.149    31494         0.73 
-##  4 Unive… Los … CA     9009…    0.180    1334  0.155    33078         0.911
-##  5 Unive… Davis CA     9561…    0.423    1218  0.198    33904         0.850
-##  6 Unive… Sant… CA     9506…    0.578    1201  0.193    34608         0.776
-##  7 Unive… Berk… CA     94720    0.169    1422  0.105    34924         0.916
-##  8 Unive… Sant… CA     93106    0.358    1281  0.108    34998         0.816
-##  9 Unive… San … CA     9410…   NA          NA NA           NA        NA    
-## 10 Unive… San … CA     9414…   NA          NA NA           NA        NA    
-## # … with 1 more variable: pftftug1_ef <dbl>
+##  1 Unive~ La J~ CA     92093    0.357    1324  0.216    31043         0.872
+##  2 Unive~ Irvi~ CA     92697    0.406    1206  0.107    31198         0.876
+##  3 Unive~ Rive~ CA     92521    0.663    1078  0.149    31494         0.73 
+##  4 Unive~ Los ~ CA     9009~    0.180    1334  0.155    33078         0.911
+##  5 Unive~ Davis CA     9561~    0.423    1218  0.198    33904         0.850
+##  6 Unive~ Sant~ CA     9506~    0.578    1201  0.193    34608         0.776
+##  7 Unive~ Berk~ CA     94720    0.169    1422  0.105    34924         0.916
+##  8 Unive~ Sant~ CA     93106    0.358    1281  0.108    34998         0.816
+##  9 Unive~ San ~ CA     9410~   NA          NA NA           NA        NA    
+## 10 Unive~ San ~ CA     9414~   NA          NA NA           NA        NA    
+## # ... with 1 more variable: pftftug1_ef <dbl>
 ```
 
 Remove `Hastings College of Law` and `UC San Francisco` and store the final data frame as a new object `univ_calif_final`.
