@@ -1,7 +1,7 @@
 ---
 title: "Lab 11 Homework"
 author: "Margarita I."
-date: "2021-02-16"
+date: "2021-02-17"
 output:
   html_document: 
     theme: spacelab
@@ -52,12 +52,12 @@ glimpse(gapminder)
 ```
 ## Rows: 1,704
 ## Columns: 6
-## $ country   <fct> Afghanistan, Afghanistan, Afghanistan, Afghanistan, Afghani…
-## $ continent <fct> Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia,…
-## $ year      <int> 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 1997,…
-## $ lifeExp   <dbl> 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 40.…
-## $ pop       <int> 8425333, 9240934, 10267083, 11537966, 13079460, 14880372, 1…
-## $ gdpPercap <dbl> 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.1134,…
+## $ country   <fct> Afghanistan, Afghanistan, Afghanistan, Afghanistan, Afgha...
+## $ continent <fct> Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asi...
+## $ year      <int> 1952, 1957, 1962, 1967, 1972, 1977, 1982, 1987, 1992, 199...
+## $ lifeExp   <dbl> 28.801, 30.332, 31.997, 34.020, 36.088, 38.438, 39.854, 4...
+## $ pop       <int> 8425333, 9240934, 10267083, 11537966, 13079460, 14880372,...
+## $ gdpPercap <dbl> 779.4453, 820.8530, 853.1007, 836.1971, 739.9811, 786.113...
 ```
 
 
@@ -121,6 +121,10 @@ gapminder %>%
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
 
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **3. How do the distributions of life expectancy compare for the years 1952 and 2007?**
 
@@ -160,7 +164,6 @@ gapminder %>%
 ![](lab11_hw_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 
-
 **4. Your answer above doesn't tell the whole story since life expectancy varies by region. Make a summary that shows the min, mean, and max life expectancy by continent for all years represented in the data.**
 
 ```r
@@ -186,7 +189,7 @@ gapminder %>%
 ##  8 Africa     1987                 53.3                71.9                39.9
 ##  9 Africa     1992                 53.6                73.6                23.6
 ## 10 Africa     1997                 53.6                74.8                36.1
-## # … with 50 more rows
+## # ... with 50 more rows
 ```
 
 ```r
@@ -198,6 +201,7 @@ gapminder %>%
 ```
 
 ![](lab11_hw_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+</div>
 
 **5. How has life expectancy changed between 1952-2007 for each continent?**
 
@@ -256,6 +260,25 @@ gapminder2 <- gapminder %>%
               values_from = pop) %>% 
   mutate(growth = year_2007 - year_1952) %>% 
   arrange(desc(growth))
+gapminder2
+```
+
+```
+## # A tibble: 142 x 4
+## # Groups:   country [142]
+##    country       year_1952  year_2007    growth
+##    <fct>             <int>      <int>     <int>
+##  1 China         556263527 1318683096 762419569
+##  2 India         372000000 1110396331 738396331
+##  3 United States 157553000  301139947 143586947
+##  4 Indonesia      82052000  223547000 141495000
+##  5 Brazil         56602560  190010647 133408087
+##  6 Pakistan       41346560  169270617 127924057
+##  7 Bangladesh     46886859  150448339 103561480
+##  8 Nigeria        33119096  135031164 101912068
+##  9 Mexico         30144317  108700891  78556574
+## 10 Philippines    22438691   91077287  68638596
+## # ... with 132 more rows
 ```
 
 **8. Use your results from the question above to plot population growth for the top five countries since 1952.**
