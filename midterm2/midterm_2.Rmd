@@ -124,6 +124,10 @@ life_expectancy_tidy %>%
 ```
 
 ## Life Expectancy  
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 3. (2 points) Let's limit the data to the past 100 years (1920-2020). For these years, which country has the highest life expectancy? How about the lowest life expectancy?  
 
@@ -188,6 +192,7 @@ life_expectancy_tidy %>%
        x = "Year",
        y = "Life Expectancy")
 ```
+</div>
 
 ## Population Growth
 6. (3 points) Which 5 countries have had the highest population growth over the past 100 years (1920-2020)?
