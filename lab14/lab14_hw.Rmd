@@ -59,7 +59,11 @@ US_collar_data_all %>%
             max_long=max(long),
             min_long=min(long))
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
 
+<div class = "blue">
 **3. Use the range of the latitude and longitude from Q2 to build an appropriate bounding box for your map and load a map from `stamen` in a terrain style projection and display the map. Then, build a final map that overlays the recorded path from Q1.**
 ```{r}
 lat <- c(26.6116, 41.58802)
@@ -79,6 +83,7 @@ for (i in 1:length(us_collar_data)){
   )
 }
 ```
+</div>
 
 ## Load the Data
 We will use the data from an experiment on hypertension in the mouse [Sugiyama et al., Genomics 71:70-77, 2001](https://www.sciencedirect.com/science/article/pii/S0888754300964012?via%3Dihub)
@@ -151,6 +156,10 @@ summary(LOD_score, pheno.col = 1) %>%
 ```{r}
 iplotScanone(LOD_score)
 ```
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;}
+</style>
+<div class = "blue">
 
 **9. Based on your genome scan results, create a table which only includes those chromosomes with LOD > 1. Creates an interactive chart with LOD curves linked to estimated QTL effects for only those chromosomes with LOD > 1. Find the gene maker with the highest LOD score and describe how does the genetype of this marker influence the individual's phenotype.**
 
@@ -163,6 +172,7 @@ summary(LOD_score, threshold = 1)
 ```{r}
 iplotScanone(LOD_score, hyper_2, chr = c(1,2,4,5,6,15))
 ```
+</div>
 
 **10. Please save your interactive chart from Q9 as a html file `hyper_iplotScanone.html` and make sure your upload it to your github repository with your lab14 homework as well.**
 ```{r}
